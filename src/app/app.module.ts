@@ -16,6 +16,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 // Modulos
 import { AppRoutingModule } from "./app-routing.module";
 
+import { ChartsModule } from 'ng2-charts';
+
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
@@ -28,6 +30,7 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { LoadInterceptor } from './interceptors/lodad.interceptor';
+import { OrdenRegistrosPipe } from './pipes/orden-registros.pipe';
 
 @NgModule({
   declarations: [
@@ -41,12 +44,14 @@ import { LoadInterceptor } from './interceptors/lodad.interceptor';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    OrdenRegistrosPipe,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    ChartsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
