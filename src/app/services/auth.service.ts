@@ -36,10 +36,7 @@ export class AuthService {
             this.store.dispatch(setUser({ user }));
           });
       } else {
-        if (this.userSuscription) {
-          this.userSuscription.unsubscribe();
-          console.log('userSuscription unsuscribe');
-        }
+        this.userSuscription?.unsubscribe();
         this._user = null;
         this.store.dispatch(unSetUser());
         this.store.dispatch(unSetItems());
